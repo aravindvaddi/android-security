@@ -1,0 +1,21 @@
+What are the two types of Intents?
+The two types of Intents are
+- Explicit Intent - where we clearly target the activity that handles our Intent
+- Implicit Intent - where we broadcast a request that any app with the capability can take up
+
+Which of the two types of Intents are more secure?
+Explicit Intents are more secure as we have significantly more control over the execution as opposed to Implicit where we never know how our request is going to be handled.
+
+What type of Intent is shown on lines 69 to 73 of SecondFragment.kt?
+Implicit Intent is shown on lines 69 to 73 of SecondFragment.kt
+
+What type of Intent is shown on lines 68 to 70 of ThirdFragment.kt?
+Explicit Intent is shown on lines 68 to 70 of ThirdFragment.kt
+
+Which of these two Intents is the proper way to do an Intent?
+Generally, Implicit Intent is the proper way to do an Intent.
+
+Fixing the incorrect Intent
+- I fixed the Intent in the SecondFragment.kt file as it was an Implicit Intent.
+- It was calling the /api/index implicitly while there is a way to do so explicitly through ProductScrollingActivity class that renders the api response into an activity.
+- I did this by using the same code used in the ThirdFragment.kt file as the target of both Intents was to display the index ProductScrollingActivity.
